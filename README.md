@@ -1,14 +1,12 @@
-Got it 🚀 — here’s a **GitHub-ready README.md** file in Markdown format for your **Kubernetes with Minikube** project. You can just copy this and place it as `README.md` in your repo.
-
 ---
-# 🚀 Kubernetes Cluster with Minikube
+#  Kubernetes Cluster with Minikube
 
-## 📌 Objective
+##  Objective
 Deploy and manage applications in a **local Kubernetes cluster** using **Minikube, kubectl, and Docker**.
 
 ---
 
-## ⚙️ Setup Instructions
+## Setup Instructions
 
 ```bash
 1. Download the Minikube binary package using the wget command:
