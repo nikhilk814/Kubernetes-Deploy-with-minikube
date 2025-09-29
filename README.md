@@ -125,18 +125,12 @@ minikube service my-app-service
 
 ---
 
-### 5️⃣ Scale the Deployment
-
-```bash
-kubectl scale deployment my-app --replicas=3
-kubectl get pods
-```
 <img width="1180" height="365" alt="15" src="https://github.com/user-attachments/assets/f6404af4-0eb6-4247-8da9-7c7361443a50" />
 <img width="1526" height="622" alt="16" src="https://github.com/user-attachments/assets/d2bf25d9-50ff-4b37-8310-deccef970a2f" />
 
 ---
 
-### 6️⃣ Debug & Logs
+### Debug & Logs
 
 ```bash
 kubectl describe deployment my-app
