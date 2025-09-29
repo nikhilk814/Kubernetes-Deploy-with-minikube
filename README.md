@@ -23,7 +23,7 @@ minikube version
 ```
 <img width="1427" height="517" alt="Screenshot 2025-09-29 191850" src="https://github.com/user-attachments/assets/ccdabe14-8b30-4fd3-a8a9-4fed0310a1de" />
 
-# Verify Minikube installation.
+### Verify Minikube installation.
 ## Installing Kubectl
 ```
 Apart from installing Minikube, you also need to set up kubectl, the command line tool for working with Kubernetes.
