@@ -143,3 +143,61 @@ Nginx is configured for both IPv4 and IPv6, and the logs confirm the worker proc
 Incoming requests, like "GET /", are being handled with 200 OK, showing the pod is serving traffic. Overall, nginx pod in Minikube is healthy and reachable.
 
 ---
+
+# Question and Answers
+1. What is Kubernetes?
+Kubernetes (also called K8s) is a system that helps you run, manage, and scale applications in containers (like Docker).
+It automatically takes care of starting, stopping, and restarting apps.
+It makes sure apps run even if a server goes down.
+
+2. What is the role of kubelet?
+Kubelet is an agent that runs on every worker node in Kubernetes.
+It talks to the control plane and makes sure the containers (pods) on that node are running as expected.
+If a pod stops, kubelet restarts it.
+
+3. Explain Pods, Deployments, and Services
+Pod: Smallest unit in Kubernetes. It can run one or more containers.
+Example: A pod with a web server container.
+Deployment: A higher-level object that manages pods. It lets you scale pods up/down and update them.
+Example: A deployment of 3 pods running nginx.
+Service: Provides a stable way to access pods (because pods may keep changing).
+Example: A service routes traffic to your pods.
+Pod = worker
+Deployment = boss who manages workers
+Service = receptionist who connects users to workers
+
+4. How do you scale in Kubernetes?
+Scaling means increasing or decreasing the number of pods.
+Command:
+kubectl scale deployment my-app --replicas=5
+Now, 5 pods of the app will run.
+
+5. What is a namespace?
+A namespace is like a folder inside a cluster.
+It helps separate resources (pods, services, etc.) between teams or projects.
+Example: dev, test, prod namespaces.
+
+
+6. Difference between ClusterIP, NodePort, LoadBalancer
+ClusterIP: Default. Service is only accessible inside the cluster.
+Example: App talks to database.
+NodePort: Exposes service on a port of each node’s IP, so you can access it from outside using NodeIP:Port.
+Example: 192.168.1.10:30007
+LoadBalancer: Works with cloud providers (AWS, Azure, GCP). Creates a public IP with load balancing.
+Example: Users access app from the internet.
+ClusterIP = Private office phone
+NodePort = Office landline (anyone can dial with number + extension)
+LoadBalancer = Toll-free customer support number
+
+7. What are ConfigMaps?
+ConfigMaps store configuration data (like environment variables, settings) separate from code.
+Pods can read values from ConfigMaps.
+Example: Store DB_HOST=127.0.0.1 in a ConfigMap, instead of writing it in your app.
+
+8. How do you perform Rolling Updates?
+A rolling update replaces old pods with new ones gradually, without downtime.
+Kubernetes creates new pods, waits until they’re ready, then deletes old ones.
+Command:
+kubectl set image deployment my-app my-app=nginx:1.21
+Updates the deployment to use a new image version.
+
